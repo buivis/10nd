@@ -4,7 +4,7 @@ function makeCar (make,model,color,fueltype) {
     this.color = color;
     this.fueltype = fueltype;
 }
-const car = new makeCar("BMW", "X5", "Black", "Dieseliu")
+const car = new makeCar("BMW", "X5", "Black", "Diesel")
 makeCar.prototype.carToMake = function() {
         carMake = {
             Make: this.make,
@@ -48,6 +48,6 @@ class Masina {
         } else{console.log('Automobilis varomas elektra')}
     }
 }
-const masina = new Masina("BMW", "X5", "Black", "Dieseliu")
+const masina = new Masina("BMW", "X5", "Black", "Diesel")
 masina.getCarModel();
 masina.fuel1();
