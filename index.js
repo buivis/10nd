@@ -4,50 +4,55 @@ function makeCar (make,model,color,fueltype) {
     this.color = color;
     this.fueltype = fueltype;
 }
-const car = new makeCar("BMW", "X5", "Black", "Diesel")
+
 makeCar.prototype.carToMake = function() {
-        carMake = {
-            Make: this.make,
-            Model: this.model
+        return {
+            make: this.make,
+            model: this.model
         }
-        console.log(carMake)
+
 }
-car.carToMake();
 makeCar.prototype.fuel = function(){
-    if(this.fueltype === 'Diesel'){
-        console.log('Automobilis varomas dyzeliu')
-    } else if(this.fueltype ==='Benzinu') {
-        console.log('Automobilis varomas benzinu')
+    if(this.fueltype === 'Diesel')
+    {
+       return 'Automobilis varomas dyzeliu'
+    } else if(this.fueltype ==='Petrol') {
+        return 'Automobilis varomas benzinu'
     }
-    else{console.log('Automobilis varomas elektra')}
+    else if(this.fueltype ==='electricity') { 
+        return 'Automobilis varomas elektra'
+    }
 }
-car.fuel()
+const makecaar = new makeCar('BMW', 'X5', 'Black', 'Diesel');
+console.log(makecaar.carToMake());
+console.log(makecaar.fuel());
 
-// -----------------2 Uzduotis -----------------
 
 
-class Masina {
-    constructor(make,model,color,fueltype){
+
+class Car {
+    constructor(make, model, color, fuelType) {
         this.make = make;
         this.model = model;
         this.color = color;
-        this.fueltype = fueltype;
+        this.fuelType = fuelType;
     }
-    getCarModel(){
-        carMake = {
-            Make: this.make,
-            Model: this.model
+    getCarModel1() {
+        return {
+            make: this.make,
+            model: this.model
         }
-        console.log(carMake)
     }
-    fuel1(){
-        if(this.fueltype === 'Diesel'){
-            console.log('Automobilis varomas dyzeliu')
-        } else if(this.fueltype ==='Benzinu') {
-            console.log('Automobilis varomas benzinu')
-        } else{console.log('Automobilis varomas elektra')}
+    fuel1() {
+        if (this.fuelType === 'Diesel') {
+            return "Automobilis varomas dyzeliu";
+        } else if (this.fuelType === 'Petrol') {
+            return "Automobilis varomas benzinu";
+        } else if (this.fuelType === 'Electricity') {
+            return "Automobilis varomas elektra"
+        }
     }
 }
-const masina = new Masina("BMW", "X5", "Black", "Diesel")
-masina.getCarModel();
-masina.fuel1();
+const car1 = new Car("BMW", "X5", "Black", "Diesel")
+console.log(car1.getCarModel1());
+console.log(car1.fuel1());
